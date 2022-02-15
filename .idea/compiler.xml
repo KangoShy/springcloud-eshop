@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="eshop-common" />
+        <module name="eshop-order" />
+        <module name="eshop-api" />
+        <module name="eshop-repertory" />
+        <module name="eshop-client" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eshop" target="1.8" />
+      <module name="eshop-api" target="1.8" />
+      <module name="eshop-client" target="1.8" />
+      <module name="eshop-common" target="1.8" />
+      <module name="eshop-order" target="1.8" />
+      <module name="eshop-repertory" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="eshop-api" options="-parameters" />
+      <module name="eshop-client" options="-parameters" />
+      <module name="eshop-common" options="-parameters" />
+      <module name="eshop-order" options="-parameters" />
+      <module name="eshop-repertory" options="-parameters" />
+    </option>
+  </component>
+</project>
