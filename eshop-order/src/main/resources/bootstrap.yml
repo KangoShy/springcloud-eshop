@@ -1,0 +1,21 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: order-server-developer
+  main:
+    allow-bean-definition-overriding: true
+
+  cloud:
+    nacos:
+      config:
+        server-addr: ${REGISTER_HOST:114.132.201.164}:${REGIS_PORT:8848}
+        file-extension: yml
+        namespace: ${REGISTER_NAMESPACE:}
+      discovery:
+        server-addr: ${REGISTER_HOST:114.132.201.164}:${REGIS_PORT:8848}
+        namespace: ${REGISTER_NAMESPACE:}
+        service: ${spring.application.name}
+        # prefix 默认为 spring.application.name 的值，也可以通过配置项 spring.cloud.nacos.config.prefix来配置。
+        #prefix: xxxx-xxx

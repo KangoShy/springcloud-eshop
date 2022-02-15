@@ -1,0 +1,19 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: repository-server-developer
+  main:
+    allow-bean-definition-overriding: true
+
+  cloud:
+    nacos:
+      config:
+        server-addr: ${REGISTER_HOST:114.132.201.164}:${REGIS_PORT:8848}
+        file-extension: yml
+        namespace: ${REGISTER_NAMESPACE:}
+      discovery:
+        server-addr: ${REGISTER_HOST:114.132.201.164}:${REGIS_PORT:8848}
+        namespace: ${REGISTER_NAMESPACE:}
+        service: ${spring.application.name}
