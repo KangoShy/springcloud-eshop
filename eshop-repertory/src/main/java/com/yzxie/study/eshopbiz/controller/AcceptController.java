@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
  * 作者：大锤
  */
 @RestController
-class AcceptController implements RepertoryProvider {
+public class AcceptController implements RepertoryProvider {
 
     @Override
-    @RequestMapping("repertory/requestTest")
-    public String requestTest(@RequestParam("param") String param) {
+    @RequestMapping("requestRepertory")
+    public String requestRepertory(@RequestParam("param") String param) {
         return String.format("请求仓储服务成功,请求参数 = [%s]！", param);
     }
 }

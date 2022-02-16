@@ -20,7 +20,7 @@ public class TestController  {
 
     @RequestMapping("/requestRepertory")
     public String requestRepertory(@RequestParam("param") String param) {
-        return repertoryProvider.requestTest(param);
+        return repertoryProvider.requestRepertory(param);
     }
 
 }

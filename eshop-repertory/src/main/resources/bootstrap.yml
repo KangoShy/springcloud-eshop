@@ -35,4 +35,7 @@ spring:
     password: ENC(thvW4ucDnOt6dR5L5XQo3Q==)
 
 
-
+# 熔断开关
+feign:
+  hystrix:
+    enabled: true

@@ -37,3 +37,8 @@ spring:
     addresses: ENC(Sy8wv+c9aWv6p4a7kp8QUYiGLqzNmHSdWsMRh87s9k0=)
     username: ENC(thvW4ucDnOt6dR5L5XQo3Q==)
     password: ENC(thvW4ucDnOt6dR5L5XQo3Q==)
+
+# 熔断开关
+feign:
+  hystrix:
+    enabled: true

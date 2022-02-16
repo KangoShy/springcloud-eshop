@@ -16,15 +16,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface RepertoryProvider {
 
 
-    @RequestMapping("/repertory/requestTest")
-    String requestTest(@RequestParam("param") String param);
+    @RequestMapping("/requestRepertory")
+    String requestRepertory(@RequestParam("param") String param);
 
     /** 服务降级 */
     @Component
     class RepertoryProviderFallBack implements RepertoryProvider{
 
         @Override
-        public String requestTest(String param) {
+        public String requestRepertory(String param) {
             return "抱歉，仓储系统异常，请稍后再试！";
         }
     }
