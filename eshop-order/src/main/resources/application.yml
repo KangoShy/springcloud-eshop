@@ -2,5 +2,18 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://114.132.201.144:3306/vpn?useUnicode=true&characterEncoding=utf-8
-    username: root
-    password: KangoShyVpn500
+    username: ENC(WXEhZxlFfSq19Wa1EEuBzQ==)
+    password: ENC(Bjv021k+DHXfIom1AqrXeg/bXK94a3Cz)
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 4000
+        readTimeout: 10000
+
+#设置openFeign和sleuth的日志级别为debug，方便查看日志信息
+logging:
+  level:
+    org.springframework.cloud.openfeign: debug
+    org.springframework.cloud.sleuth: debug

@@ -17,3 +17,22 @@ spring:
         server-addr: ${REGISTER_HOST:114.132.201.164}:${REGIS_PORT:8848}
         namespace: ${REGISTER_NAMESPACE:}
         service: ${spring.application.name}
+  sleuth:
+    sampler:
+      #日志数据采样百分比，默认0.1(10%)，这里为了测试设置成了100%，生产环境只需要0.1即可
+      probability: 1.0
+  zipkin:
+    # zipkin集成mq做数据传输方式，这个配置则不需要
+    #base-url: http://114.132.201.144:9411
+    discovery-client-enabled: false
+    sender:
+      ## 使用rabbitMQ进行数据传输
+      type: rabbit
+
+  rabbitmq:
+    addresses: ENC(Sy8wv+c9aWv6p4a7kp8QUYiGLqzNmHSdWsMRh87s9k0=)
+    username: ENC(thvW4ucDnOt6dR5L5XQo3Q==)
+    password: ENC(thvW4ucDnOt6dR5L5XQo3Q==)
+
+
+
