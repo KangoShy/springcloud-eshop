@@ -1,4 +1,4 @@
-com\yzxie\study\client\RepertoryProvider$RepertoryProviderFallBack.class
-com\yzxie\study\client\RepertoryProvider.class
-com\yzxie\study\client\OrderProvider$OrderProviderFallBack.class
-com\yzxie\study\client\OrderProvider.class
+com\yzxie\study\client\provider\OrderProvider$OrderProviderFallBack.class
+com\yzxie\study\client\provider\RepertoryProvider.class
+com\yzxie\study\client\provider\OrderProvider.class
+com\yzxie\study\client\provider\RepertoryProvider$RepertoryProviderFallBack.class

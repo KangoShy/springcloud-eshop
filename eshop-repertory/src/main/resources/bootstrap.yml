@@ -35,7 +35,39 @@ spring:
     password: ENC(thvW4ucDnOt6dR5L5XQo3Q==)
 
 
-# 熔断开关
+#feign全局超时设置
 feign:
+  client:
+    config:
+      default:
+        connectTimeout: 4000
+        readTimeout: 10000
+  # 熔断开关
   hystrix:
     enabled: true
+  #Feign 支持对请求和响应进行GZIP压缩，以减少通信过程中的性能损耗。
+  compression:
+    request:
+      enabled: true
+      mime-types: text/html, application/xml, application/json # 设置压缩的数据类型
+      min-request-size: 2048 # 设置触发压缩的大小下限
+    response:
+      enabled: true
+
+#设置openFeign和sleuth的日志级别为debug，方便查看日志信息
+logging:
+  level:
+    org.springframework.cloud.openfeign: debug
+    org.springframework.cloud.sleuth: debug
+ribbon:
+  eager-load:
+    # 需要初始化的服务端,多个使用逗号分隔
+    clients: order-server-developer
+    # Ribbon默认懒加载，意味着只有在发起调用的时候才会创建客户端。在第一次进行服务调用时会做一些初始化工作，比如：创建负载均衡器 ，如果网络情况不好，这次调用可能会超时。
+    # 可以开启饥饿加载，在项目启动时就完成初始化工作，解决第一次调用慢的问题
+    enabled: true
+
+# ribbon 的随机策略
+order-server-develpor:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.BestAvailableRule

@@ -5,15 +5,10 @@ spring:
     username: ENC(WXEhZxlFfSq19Wa1EEuBzQ==)
     password: ENC(Bjv021k+DHXfIom1AqrXeg/bXK94a3Cz)
 
-feign:
-  client:
-    config:
-      default:
-        connectTimeout: 4000
-        readTimeout: 10000
-
-#设置openFeign和sleuth的日志级别为debug，方便查看日志信息
-logging:
-  level:
-    org.springframework.cloud.openfeign: debug
-    org.springframework.cloud.sleuth: debug
+  redis:
+    host: 114.132.201.144
+    port: 6379
+    lettuce:
+      pool:
+        max-active: 300
+    password: ENC(A2AdF7PLnAaQ14qVqCTuQw==)

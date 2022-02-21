@@ -1,6 +1,6 @@
 package com.yzxie.study.eshopbiz.controller;
 
-import com.yzxie.study.client.RepertoryProvider;
+import com.yzxie.study.client.provider.RepertoryProvider;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

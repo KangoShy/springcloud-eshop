@@ -38,7 +38,28 @@ spring:
     username: ENC(thvW4ucDnOt6dR5L5XQo3Q==)
     password: ENC(thvW4ucDnOt6dR5L5XQo3Q==)
 
-# 熔断开关
+
+#feign全局超时设置
 feign:
+  client:
+    config:
+      default:
+        connectTimeout: 4000
+        readTimeout: 10000
+  # 熔断开关
   hystrix:
     enabled: true
+  #Feign 支持对请求和响应进行GZIP压缩，以减少通信过程中的性能损耗。
+  compression:
+    request:
+      enabled: true
+      mime-types: text/html, application/xml, application/json # 设置压缩的数据类型
+      min-request-size: 2048 # 设置触发压缩的大小下限
+    response:
+      enabled: true
+
+#设置openFeign和sleuth的日志级别为debug，方便查看日志信息
+logging:
+  level:
+    org.springframework.cloud.openfeign: debug
+    org.springframework.cloud.sleuth: debug

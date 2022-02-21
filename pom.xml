@@ -32,6 +32,8 @@
         <rabbitmq.version>2.1.7.RELEASE</rabbitmq.version>
         <jasypt.version>2.1.1</jasypt.version>
         <sleuth.version>2.1.3.RELEASE</sleuth.version>
+        <redis.version>2.1.3.RELEASE</redis.version>
+        <commons-pool2.version>2.9.0</commons-pool2.version>
     </properties>
 
     <dependencies>
@@ -41,6 +43,16 @@
     <!-- 版本控制 -->
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${commons-pool2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>${redis.version}</version>
+            </dependency>
             <!-- jasypt 密码加密处理 -->
             <dependency>
                 <groupId>com.github.ulisesbocchio</groupId>
